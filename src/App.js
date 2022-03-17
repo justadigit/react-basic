@@ -1,7 +1,10 @@
+import ObjectState from './ObjectState';
+import PrevCounter from './PrevCounter';
+
 function App() {
   return (
     <div className="App">
-      Hello World
+      <ObjectState />
     </div>
   );
 }
