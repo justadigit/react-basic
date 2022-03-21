@@ -1,7 +1,13 @@
+import './App.css';
+
+import { ItemProvider } from './context/ItemContext';
+import View from './View';
 function App() {
   return (
     <div className="App">
-      Hello World
+      <ItemProvider>
+        <View />
+      </ItemProvider>
     </div>
   );
 }
