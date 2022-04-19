@@ -1,0 +1,139 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Product 11",
+      "category": "SUZUKI",
+      "price": "3300",
+      "description": "Description for product 11."
+    },
+    {
+      "id": 2,
+      "title": "Product 2",
+      "category": "Honda",
+      "price": "40000",
+      "description": "Vestibulum quam sapien."
+    },
+    {
+      "id": 3,
+      "title": "Product 3",
+      "category": "BMW",
+      "price": "500",
+      "description": "Cras mi pede, malesuada in, imperdiet et."
+    },
+    {
+      "id": 4,
+      "title": "Product 4",
+      "category": "Suzuki",
+      "price": "20000",
+      "description": "Cras non velit nec nisi vulputate nonummy."
+    },
+    {
+      "id": 5,
+      "title": "Product 5",
+      "category": "Toyota",
+      "price": "40000",
+      "description": "Quisque porta volutpat erat."
+    },
+    {
+      "id": 6,
+      "title": "Product 6",
+      "category": "Suzuki",
+      "price": "10000",
+      "description": "Curabitur in libero ut massa volutpat convallis."
+    },
+    {
+      "id": 7,
+      "title": "Product 7",
+      "category": "Honda",
+      "price": "90000",
+      "description": "Vestibulum quam sapien."
+    },
+    {
+      "id": 8,
+      "title": "Product 8",
+      "category": "BMW",
+      "price": "80000",
+      "description": "Maecenas ut massa quis augue luctus tincidunt."
+    },
+    {
+      "id": 9,
+      "title": "Product 9",
+      "category": "Toyota",
+      "price": "70000",
+      "description": "Sed sagittis. Nam congue."
+    },
+    {
+      "id": 10,
+      "title": "Product 10",
+      "category": "Honda",
+      "price": "50000",
+      "description": "Nam ultrices, libero non.",
+      "discount": {
+        "type": "shipping"
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "rating": 4,
+      "comment": "Curabitur at ipsum ac tellus semper interdum.",
+      "productId": 10
+    },
+    {
+      "id": 2,
+      "rating": 2,
+      "comment": "Fusce consequat. Nulla nisl. Nunc nisl.",
+      "productId": 1
+    },
+    {
+      "id": 3,
+      "rating": 4,
+      "comment": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+      "productId": 4
+    },
+    {
+      "id": 4,
+      "rating": 3,
+      "comment": "In hac habitasse platea dictumst.",
+      "productId": 2
+    },
+    {
+      "id": 5,
+      "rating": 1,
+      "comment": "Proin leo odio, porttitor id.",
+      "productId": 2
+    },
+    {
+      "id": 6,
+      "rating": 1,
+      "comment": "Quisque porta volutpat erat. ",
+      "productId": 4
+    },
+    {
+      "id": 7,
+      "rating": 1,
+      "comment": "Vestibulum ac est lacinia nisi venenatis tristique.",
+      "productId": 1
+    },
+    {
+      "id": 8,
+      "rating": 5,
+      "comment": "Duis bibendum.",
+      "productId": 4
+    },
+    {
+      "id": 9,
+      "rating": 1,
+      "comment": "Duis aliquam convallis nunc.",
+      "productId": 3
+    },
+    {
+      "id": 10,
+      "rating": 1,
+      "comment": "Fusce posuere felis sed lacus.",
+      "productId": 6
+    }
+  ]
+}
