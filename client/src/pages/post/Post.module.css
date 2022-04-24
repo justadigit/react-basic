@@ -1,0 +1,58 @@
+/* With # 
+#054297
+low dark blue
+#e9023c
+red
+#ffffff
+white
+
+#c2c8c8
+grey
+
+#002559
+dark blue
+
+#0455c6
+blue
+*/
+.container {
+  width: 40%;
+  margin: auto;
+  margin-top: 50px;
+}
+.authorInfo {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.authorWrapper {
+  width: 50px;
+  margin-right: 10px;
+}
+.authorWrapper img {
+  max-width: 100% !important;
+  height: auto;
+  display: block;
+}
+.authorInfo a {
+  color: #002559;
+  text-decoration: none;
+}
+.post span {
+  display: block;
+  color: #002559;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.post img {
+  width: 100%;
+  height: 500px !important;
+  object-fit: cover;
+}
+.post p {
+  text-align: justify;
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 1.5em;
+}

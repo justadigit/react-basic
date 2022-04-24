@@ -1,0 +1,184 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "mgmg",
+      "email": "mgmg@gmail.com",
+      "password": "mgmg123"
+    },
+    {
+      "id": 2,
+      "name": "johnsmith",
+      "email": "john@gmail.com",
+      "password": "john123"
+    },
+    {
+      "id": 3,
+      "name": "mary",
+      "email": "mary@gmail.com",
+      "password": "mary123"
+    },
+    {
+      "id": 4,
+      "name": "hanasan",
+      "email": "hana@gmail.com",
+      "password": "hana123"
+    },
+    {
+      "id": 5,
+      "name": "Arman Gulliman",
+      "email": "arman@gmail.com",
+      "password": "arman123"
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "mgmg",
+      "email": "mgmg@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "johnsmith",
+      "email": "john@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "mary",
+      "email": "mary@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "hanasan",
+      "email": "hana@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "Arman Gulliman",
+      "email": "arman@gmail.com"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Title for post 1",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore odit iusto distinctio voluptatibus aliquam corrupti, dolorem ipsa, nisi maxime earum minima quas, porro quisquam unde expedita incidunt dolores error. Temporibus fuga sed qui tempora laborum nesciunt odio, esse placeat, consectetur, ut voluptatibus excepturi nam libero reprehenderit quidem labore laudantium ducimus?",
+      "authorId": 2
+    },
+    {
+      "id": 3,
+      "title": "Title for post 3",
+      "description": "This is description for post 3",
+      "authorId": 2
+    },
+    {
+      "id": 4,
+      "title": "Title for post 4",
+      "description": "This is description for post 4",
+      "authorId": 2
+    },
+    {
+      "id": 5,
+      "title": "Title for post 5",
+      "description": "This is description for post 5",
+      "authorId": 5
+    },
+    {
+      "id": 2,
+      "title": "onsectetur adipisicing elit",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore odit iusto distinctio voluptatibus aliquam corrupti, dolorem ipsa, nisi maxime earum minima quas, porro quisquam unde expedita incidunt dolores error. Temporibus fuga sed qui tempora laborum nesciunt odio, esse placeat, consectetur, ut voluptatibus excepturi nam libero reprehenderit quidem labore laudantium ducimus?",
+      "authorId": 1
+    },
+    {
+      "id": 6,
+      "title": "Title for post 6",
+      "description": "This is description for post 6",
+      "authorId": 2
+    },
+    {
+      "id": 7,
+      "title": "Title for post 7",
+      "description": "This is description for post 7",
+      "authorId": 3
+    },
+    {
+      "id": 8,
+      "title": "Title for post 8",
+      "description": "This is description for post 8",
+      "authorId": 2
+    },
+    {
+      "id": 9,
+      "title": "Title for post 9",
+      "description": "This is description for post 9",
+      "authorId": 1
+    },
+    {
+      "id": 10,
+      "title": "Title for post 10",
+      "description": "This is description for post 10",
+      "authorId": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "comment": "Quisque porta volutpat erat. Quisque erat eros, ",
+      "postId": 1,
+      "userId": 4
+    },
+    {
+      "id": 2,
+      "comment": "Duis aliquam convallis nunc. ",
+      "postId": 2,
+      "userId": 4
+    },
+    {
+      "id": 3,
+      "comment": "Vestibulum ac est lacinia nisi venenatis tristique. ",
+      "postId": 1,
+      "userId": 5
+    },
+    {
+      "id": 4,
+      "comment": "Integer ac leo. Pellentesque ",
+      "postId": 4,
+      "userId": 2
+    },
+    {
+      "id": 5,
+      "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
+      "postId": 3,
+      "userId": 1
+    },
+    {
+      "id": 6,
+      "comment": "Vestibulum ac est lacinia nisi venenatis tristique. ",
+      "userId": 3
+    },
+    {
+      "id": 7,
+      "comment": "In hac habitasse platea dictumst. .",
+      "postId": 1,
+      "userId": 5
+    },
+    {
+      "id": 8,
+      "comment": "Duis aliquam convallis nunc. ",
+      "postId": 5,
+      "userId": 5
+    },
+    {
+      "id": 9,
+      "comment": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. ",
+      "postId": 4,
+      "userId": 2
+    },
+    {
+      "id": 10,
+      "comment": "Cras mi pede, malesuada in, imperdiet et, ",
+      "postId": 1,
+      "userId": 2
+    }
+  ]
+}
