@@ -11,15 +11,15 @@ function Author() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/authors/${params.aid}?_embed=posts`)
+      .get(
+        `http://localhost:4000/api/v1/authors/${params.aid}?_embed=posts&_order=desc`
+      )
       .then((response) => {
         setAuthor(response.data);
         setLoading(false);
-        console.log(response.data);
       });
   }, [params.aid]);
   const { id, name, email, posts } = author;
-  console.log('imageUrl', faker.image.imageUrl());
   return loading ? (
     <h1 className={styles.loading}>Loading...</h1>
   ) : (
@@ -50,7 +50,7 @@ function Author() {
             onClick={() => navigate(`/posts/${post.id}`)}
           >
             <div className={styles.imageWrapper}>
-              <img src={`${faker.image.image()}`} alt="" />
+              <img src={`${faker.image.city(640, 480, true)}`} alt="" />
             </div>
             <div className={styles.postInfo}>
               <span className={styles.postTitle}>{post.title}</span>

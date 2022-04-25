@@ -29,6 +29,24 @@
       "name": "Arman Gulliman",
       "email": "arman@gmail.com",
       "password": "arman123"
+    },
+    {
+      "name": "hi",
+      "email": "hi@gmail.com",
+      "password": "naywin",
+      "id": 6
+    },
+    {
+      "name": "naywin",
+      "email": "naywin@gmail.com",
+      "password": "naywin",
+      "id": 7
+    },
+    {
+      "name": "saisai",
+      "email": "saisai@gmail.com",
+      "password": "naywin",
+      "id": 8
     }
   ],
   "authors": [
@@ -56,6 +74,21 @@
       "id": 5,
       "name": "Arman Gulliman",
       "email": "arman@gmail.com"
+    },
+    {
+      "name": "hi",
+      "email": "hi@gmail.com",
+      "id": 6
+    },
+    {
+      "name": "naywin",
+      "email": "naywin@gmail.com",
+      "id": 7
+    },
+    {
+      "name": "saisai",
+      "email": "saisai@gmail.com",
+      "id": 8
     }
   ],
   "posts": [
@@ -118,6 +151,54 @@
       "title": "Title for post 10",
       "description": "This is description for post 10",
       "authorId": 5
+    },
+    {
+      "authorId": 6,
+      "title": "f Lorem Ipsum.",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "id": 11
+    },
+    {
+      "authorId": 6,
+      "title": "Lorem Ipsum is simply dummy text",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "id": 12
+    },
+    {
+      "authorId": 1,
+      "title": "mg mg mg",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "id": 13
+    },
+    {
+      "authorId": 1,
+      "title": "next one mg mg",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.d",
+      "id": 14
+    },
+    {
+      "authorId": 6,
+      "title": "I am hi hi",
+      "description": "okok I trust you",
+      "id": 15
+    },
+    {
+      "authorId": 6,
+      "title": "hi again",
+      "description": "ok i am hi again",
+      "id": 16
+    },
+    {
+      "authorId": 7,
+      "title": "nay win post",
+      "description": "ok i am nay win",
+      "id": 17
+    },
+    {
+      "authorId": 8,
+      "title": "I am sai sai",
+      "description": "I am sai sai",
+      "id": 18
     }
   ],
   "comments": [
@@ -125,60 +206,102 @@
       "id": 1,
       "comment": "Quisque porta volutpat erat. Quisque erat eros, ",
       "postId": 1,
-      "userId": 4
+      "authorId": 4
     },
     {
       "id": 2,
       "comment": "Duis aliquam convallis nunc. ",
       "postId": 2,
-      "userId": 4
+      "authorId": 4
     },
     {
       "id": 3,
       "comment": "Vestibulum ac est lacinia nisi venenatis tristique. ",
       "postId": 1,
-      "userId": 5
+      "authorId": 5
     },
     {
       "id": 4,
       "comment": "Integer ac leo. Pellentesque ",
       "postId": 4,
-      "userId": 2
+      "authorId": 2
     },
     {
       "id": 5,
       "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
       "postId": 3,
-      "userId": 1
+      "authorId": 1
     },
     {
       "id": 6,
       "comment": "Vestibulum ac est lacinia nisi venenatis tristique. ",
-      "userId": 3
+      "authorId": 3
     },
     {
       "id": 7,
       "comment": "In hac habitasse platea dictumst. .",
       "postId": 1,
-      "userId": 5
+      "authorId": 5
     },
     {
       "id": 8,
       "comment": "Duis aliquam convallis nunc. ",
       "postId": 5,
-      "userId": 5
+      "authorId": 5
     },
     {
       "id": 9,
       "comment": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. ",
       "postId": 4,
-      "userId": 2
+      "authorId": 2
     },
     {
       "id": 10,
       "comment": "Cras mi pede, malesuada in, imperdiet et, ",
       "postId": 1,
-      "userId": 2
+      "authorId": 2
+    },
+    {
+      "postId": 12,
+      "authorId": 1,
+      "comment": "hi I am mgmg",
+      "id": 11
+    },
+    {
+      "postId": 12,
+      "authorId": 1,
+      "comment": "hi I am mgmg Again",
+      "id": 12
+    },
+    {
+      "postId": 12,
+      "authorId": 1,
+      "comment": "hi I am mgmg Again and again",
+      "id": 13
+    },
+    {
+      "postId": 12,
+      "authorId": 1,
+      "comment": "hi I am mgmg Again and again and again",
+      "id": 14
+    },
+    {
+      "postId": 12,
+      "authorId": 1,
+      "comment": "mgmg stop pi",
+      "id": 15
+    },
+    {
+      "postId": 14,
+      "authorId": 7,
+      "comment": "hey I am Nay Win",
+      "id": 16
+    },
+    {
+      "postId": 17,
+      "authorId": 8,
+      "comment": "hey I am sai sai",
+      "id": 17
     }
   ]
 }

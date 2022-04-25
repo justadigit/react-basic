@@ -34,3 +34,12 @@ ul.navMenu {
   color: #002559;
   font-weight: 700;
 }
+.navMenu button {
+  font-size: 1em;
+  font-weight: 600;
+  background: none;
+  border: none;
+  color: #e9023c;
+  padding: 0 20px;
+  cursor: pointer;
+}
