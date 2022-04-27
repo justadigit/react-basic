@@ -6,7 +6,7 @@ const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
   //state
-  const [userInfo, setUserInfo] = useState(null);
+  const [userInfo, setUserInfo] = useState({});
   const [errorMsg, setErrorMsg] = useState(null);
   const [successMsg, setSuccessMsg] = useState(null);
 
@@ -77,6 +77,17 @@ export const AuthProvider = ({ children }) => {
         setErrorMsg('Something Wrongs!');
       });
   };
+  //deleteComment
+  const deleteComment = (comment) => {
+    axios
+      .delete(`http://localhost:4000/api/v1/comments/${comment.id}`)
+      .then((result) => {
+        return true;
+      })
+      .catch((err) => {
+        setErrorMsg('Something Wrongs!');
+      });
+  };
 
   //rendering
   return (
@@ -87,11 +98,13 @@ export const AuthProvider = ({ children }) => {
         successMsg,
         setSuccessMsg,
         errorMsg,
+        setErrorMsg,
         signup,
         login,
         logout,
         createPost,
         createComment,
+        deleteComment,
       }}
     >
       {children}

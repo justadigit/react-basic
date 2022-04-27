@@ -10,7 +10,7 @@ function Navbar() {
         <Link className={styles.navHeader} to="/">
           Posts-Comments
         </Link>
-        {auth.userInfo ? (
+        {auth.userInfo.email ? (
           <ul className={styles.navMenu}>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/posts">Posts</NavLink>

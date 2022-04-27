@@ -24,20 +24,26 @@ function Post() {
     const commentsRequest = axios.get(
       `http://localhost:4000/api/v1/posts/${params.pId}/comments?_expand=author`
     );
-    axios.all([postRequest, commentsRequest]).then(
-      axios.spread((postResponse, commentsResponse) => {
-        setPost(postResponse.data);
-        setComments(commentsResponse.data);
+    axios
+      .all([postRequest, commentsRequest])
+      .then(
+        axios.spread((postResponse, commentsResponse) => {
+          setPost(postResponse.data);
+          setComments(commentsResponse.data);
+          setLoading(false);
+        })
+      )
+      .catch((err) => {
+        auth.setErrorMsg('Something Wrong');
         setLoading(false);
-      })
-    );
+      });
   }, [params.pId, refresh]);
 
   //commenter
   const [commentText, setCommentText] = useState('');
   const handleComment = (event) => {
     event.preventDefault();
-    if (auth.userInfo) {
+    if (auth.userInfo.email) {
       const newComment = {
         postId: post.id,
         authorId: auth.userInfo.id,
@@ -49,6 +55,16 @@ function Post() {
     } else {
       alert('You Need to Login!');
     }
+  };
+
+  //delete comment
+  const deleteCommentHandler = (comment) => {
+    auth.deleteComment(comment);
+    setRefresh(refresh + 1);
+    function deleted() {
+      alert('Deleted');
+    }
+    setTimeout(deleted, 100);
   };
   return loading ? (
     <h1>Loading..</h1>
@@ -74,11 +90,21 @@ function Post() {
             <div className={styles.commenterWrapper}>
               <img src={AVATOR} alt="" />
             </div>
-            <div className={styles.commenterInfo}>
-              <Link to={`/authors/${comment.author.id}`}>
-                {comment.author.name}
-              </Link>
-              <span>{comment.comment}</span>
+            <div>
+              <div className={styles.commenterInfo}>
+                <Link to={`/authors/${comment.author.id}`}>
+                  {comment.author.name}
+                </Link>
+                <span>{comment.comment}</span>
+              </div>
+              {comment.author.email === auth.userInfo.email && (
+                <button
+                  className={styles.deleteComment}
+                  onClick={() => deleteCommentHandler(comment)}
+                >
+                  Delete
+                </button>
+              )}
             </div>
           </div>
         ))}

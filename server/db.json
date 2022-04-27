@@ -189,12 +189,6 @@
       "id": 16
     },
     {
-      "authorId": 7,
-      "title": "nay win post",
-      "description": "ok i am nay win",
-      "id": 17
-    },
-    {
       "authorId": 8,
       "title": "I am sai sai",
       "description": "I am sai sai",
@@ -202,12 +196,6 @@
     }
   ],
   "comments": [
-    {
-      "id": 1,
-      "comment": "Quisque porta volutpat erat. Quisque erat eros, ",
-      "postId": 1,
-      "authorId": 4
-    },
     {
       "id": 2,
       "comment": "Duis aliquam convallis nunc. ",
@@ -298,10 +286,10 @@
       "id": 16
     },
     {
-      "postId": 17,
+      "postId": 14,
       "authorId": 8,
-      "comment": "hey I am sai sai",
-      "id": 17
+      "comment": " I am sai\n",
+      "id": 18
     }
   ]
 }
