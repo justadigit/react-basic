@@ -15,7 +15,6 @@ function Post() {
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
-
   //getting data from fetching APIs
   useEffect(() => {
     const postRequest = axios.get(
@@ -66,6 +65,12 @@ function Post() {
     }
     setTimeout(deleted, 100);
   };
+
+  //delete post
+  const deletePost = (post) => {
+    auth.deletePost(post);
+  };
+
   return loading ? (
     <h1>Loading..</h1>
   ) : (
@@ -77,7 +82,20 @@ function Post() {
         <Link to={`/authors/${post.author.id}`}>{post.author.name}</Link>
       </section>
       <section className={styles.post}>
-        <span>{post.title}</span>
+        <span className={styles.postTitle}>
+          {post.title}
+          {post.author.email === auth.userInfo.email && (
+            <div className={styles.actionButtons}>
+              <button className={styles.updatePost}>Update</button>
+              <button
+                className={styles.deletePost}
+                onClick={() => deletePost(post)}
+              >
+                Delete
+              </button>
+            </div>
+          )}
+        </span>
         <img src={faker.image.nature(1234, 2345, true)} alt="" />
         <p>{post.description}</p>
       </section>

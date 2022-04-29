@@ -24,7 +24,9 @@ function Posts() {
                 className={styles.postTitle}
                 onClick={() => navigate(`/posts/${post.id}`)}
               >
-                {post.title}
+                {post.title.length > 25
+                  ? `${post.title.substr(0, 25)}. . .`
+                  : post.title}
               </span>
               <p className={styles.postDescription}>
                 {post.description.length > 150

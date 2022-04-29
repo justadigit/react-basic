@@ -38,12 +38,30 @@ blue
   color: #002559;
   text-decoration: none;
 }
-.post span {
-  display: block;
+.post .postTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: #002559;
   font-size: 2.5em;
   font-weight: bold;
   margin-bottom: 20px;
+}
+.actionButtons button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button.updatePost {
+  color: #ffffff;
+  background-color: #054297;
+}
+button.deletePost {
+  color: #e9023c;
+  background-color: #e4e7e7;
 }
 .post img {
   width: 100%;

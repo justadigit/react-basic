@@ -69,7 +69,12 @@ function Home() {
                 <img src={faker.image.nature(640, 480, true)} alt="" />
               </div>
               <div className={styles.postInfo}>
-                <span className={styles.postTitle}>{post.title}</span>
+                <span className={styles.postTitle}>
+                  {' '}
+                  {post.title.length > 25
+                    ? `${post.title.substr(0, 25)}. . .`
+                    : post.title}
+                </span>
                 <p className={styles.postDescription}>
                   {post.description.length > 150
                     ? `${post.description.substr(0, 150)} . . .`

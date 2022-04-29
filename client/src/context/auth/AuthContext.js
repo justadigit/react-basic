@@ -1,14 +1,34 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import RefresherContext from '../../context/refresher/RefresherContext';
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
   //state
-  const [userInfo, setUserInfo] = useState({});
+  const [userInfo, setUserInfo] = useState({ id: '', name: '', email: '' });
   const [errorMsg, setErrorMsg] = useState(null);
   const [successMsg, setSuccessMsg] = useState(null);
+
+  //consuming refresherContext
+  const { refresh, setRefresh } = useContext(RefresherContext);
+
+  useEffect(() => {
+    console.log('I am Auth context');
+    if (
+      sessionStorage.email &&
+      sessionStorage.authorId &&
+      sessionStorage.name
+    ) {
+      setUserInfo({
+        id: sessionStorage.authorId,
+        email: sessionStorage.email,
+        name: sessionStorage.name,
+      });
+      console.log(userInfo);
+    }
+  }, [sessionStorage]);
 
   //navigate
   const navigate = useNavigate();
@@ -45,8 +65,11 @@ export const AuthProvider = ({ children }) => {
         `http://localhost:4000/api/v1/users?email=${user.email}&password=${user.password}`
       )
       .then((response) => {
-        const { id, name, email } = response.data[0];
+        const { name, email, id } = response.data[0];
         setUserInfo({ id: id, name: name, email: email });
+        sessionStorage.setItem('authorId', id);
+        sessionStorage.setItem('name', name);
+        sessionStorage.setItem('email', email);
         navigate('/');
       })
       .catch((err) => setErrorMsg('Something Wrong! Error'));
@@ -54,7 +77,8 @@ export const AuthProvider = ({ children }) => {
 
   //logout
   const logout = () => {
-    setUserInfo(null);
+    sessionStorage.removeItem('name');
+    sessionStorage.removeItem('email');
     navigate('/');
   };
 
@@ -89,6 +113,20 @@ export const AuthProvider = ({ children }) => {
       });
   };
 
+  //deletePost
+  const deletePost = (post) => {
+    const authorId = post.author.id;
+    axios
+      .delete(`http://localhost:4000/api/v1/posts/${post.id}`)
+      .then(() => {
+        setRefresh(refresh + 1);
+        navigate(`/authors/${authorId}`);
+      })
+      .catch((err) => {
+        setErrorMsg('Something Wrongs!');
+      });
+  };
+
   //rendering
   return (
     <AuthContext.Provider
@@ -105,6 +143,7 @@ export const AuthProvider = ({ children }) => {
         createPost,
         createComment,
         deleteComment,
+        deletePost,
       }}
     >
       {children}

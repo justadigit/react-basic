@@ -7,14 +7,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
 }
 .allPostsList .post {
   width: 32%;
   display: flex;
   flex-direction: column;
   border: 1px solid #e6e8e8;
-  margin: 10px 0;
+  margin: 10px 5px;
 }
 .postImageWrapper {
   height: 230px;
