@@ -47,6 +47,12 @@
       "email": "saisai@gmail.com",
       "password": "naywin",
       "id": 8
+    },
+    {
+      "name": "Hla Hla",
+      "email": "hlahla@gmail.com",
+      "password": "123123",
+      "id": 9
     }
   ],
   "authors": [
@@ -89,6 +95,11 @@
       "name": "saisai",
       "email": "saisai@gmail.com",
       "id": 8
+    },
+    {
+      "name": "Hla Hla",
+      "email": "hlahla@gmail.com",
+      "id": 9
     }
   ],
   "posts": [
@@ -131,7 +142,7 @@
     {
       "id": 8,
       "title": "Title for post 8",
-      "description": "This is description for post 8",
+      "description": "This is description for post ggg",
       "authorId": 2
     },
     {
@@ -173,12 +184,6 @@
       "authorId": 5
     },
     {
-      "id": 4,
-      "comment": "Integer ac leo. Pellentesque ",
-      "postId": 4,
-      "authorId": 2
-    },
-    {
       "id": 5,
       "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
       "postId": 3,
@@ -200,18 +205,6 @@
       "comment": "Duis aliquam convallis nunc. ",
       "postId": 5,
       "authorId": 5
-    },
-    {
-      "id": 9,
-      "comment": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. ",
-      "postId": 4,
-      "authorId": 2
-    },
-    {
-      "id": 10,
-      "comment": "Cras mi pede, malesuada in, imperdiet et, ",
-      "postId": 1,
-      "authorId": 2
     }
   ]
 }

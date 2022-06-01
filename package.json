@@ -17,6 +17,7 @@
     "json-server": "^0.17.0"
   },
   "dependencies": {
+    "react-bootstrap": "^2.4.0",
     "uuid": "^8.3.2"
   }
 }

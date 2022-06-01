@@ -7,7 +7,8 @@ const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
   //state
-  const [userInfo, setUserInfo] = useState({ id: '', name: '', email: '' });
+  const initialUserState = { id: '', name: '', email: '' };
+  const [userInfo, setUserInfo] = useState(initialUserState);
   const [errorMsg, setErrorMsg] = useState(null);
   const [successMsg, setSuccessMsg] = useState(null);
 
@@ -79,6 +80,8 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     sessionStorage.removeItem('name');
     sessionStorage.removeItem('email');
+    sessionStorage.removeItem('authorId');
+    setUserInfo(initialUserState);
     navigate('/');
   };
 
@@ -126,6 +129,17 @@ export const AuthProvider = ({ children }) => {
         setErrorMsg('Something Wrongs!');
       });
   };
+  //updatePost
+  const updatePost = (post) => {
+    axios
+      .patch(`http://localhost:4000/api/v1/posts/${post.id}`, post)
+      .then(() => {
+        setRefresh(refresh + 1);
+      })
+      .catch((err) => {
+        setErrorMsg('Something Wrongs!');
+      });
+  };
 
   //rendering
   return (
@@ -144,6 +158,7 @@ export const AuthProvider = ({ children }) => {
         createComment,
         deleteComment,
         deletePost,
+        updatePost,
       }}
     >
       {children}

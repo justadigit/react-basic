@@ -6,7 +6,7 @@ function Navbar() {
   let auth = useAuth();
   return (
     <div className={styles.container}>
-      <nav>
+      <nav className={styles.navbar}>
         <Link className={styles.navHeader} to="/">
           Posts-Comments
         </Link>

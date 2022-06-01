@@ -6,15 +6,25 @@ import styles from './Post.module.css';
 import AVATOR from '../../assets/images/avator.png';
 import faker from '@faker-js/faker';
 import RefresherContext from '../../context/refresher/RefresherContext';
+import { Modal } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function Post() {
   //consuming provided value
   const auth = useAuth();
   const { refresh, setRefresh } = useContext(RefresherContext);
 
   const params = useParams();
+
+  //state management
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  //state for update post modal
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+
   //getting data from fetching APIs
   useEffect(() => {
     const postRequest = axios.get(
@@ -71,6 +81,49 @@ function Post() {
     auth.deletePost(post);
   };
 
+  //update Post
+  const handleUpdateButton = () => {
+    setShow(true);
+    setupdatedPost({
+      utitle: post.title,
+      udescription: post.description,
+    });
+  };
+  const initialUpdateState = {
+    utitle: '',
+    udescription: '',
+  };
+  const [fill, setFill] = useState(false);
+  const [updatedPost, setupdatedPost] = useState(initialUpdateState);
+  const [errorMsg, setErrorMsg] = useState('');
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setupdatedPost({ ...updatedPost, [name]: value });
+    if (
+      updatedPost.utitle.trim().length > 0 &&
+      updatedPost.udescription.trim().length > 0
+    ) {
+      setFill(false);
+    } else {
+      setFill(true);
+    }
+  };
+  const handleUpdatePost = (e) => {
+    e.preventDefault();
+    const update = {
+      id: post.id,
+      title: updatedPost.utitle,
+      description: updatedPost.udescription,
+    };
+    if (fill) {
+      setErrorMsg('Fills all fileds');
+    } else {
+      auth.updatePost(update);
+    }
+
+    setShow(false);
+  };
+
   return loading ? (
     <h1>Loading..</h1>
   ) : (
@@ -86,7 +139,12 @@ function Post() {
           {post.title}
           {post.author.email === auth.userInfo.email && (
             <div className={styles.actionButtons}>
-              <button className={styles.updatePost}>Update</button>
+              <button
+                className={styles.updatePost}
+                onClick={handleUpdateButton}
+              >
+                Update
+              </button>
               <button
                 className={styles.deletePost}
                 onClick={() => deletePost(post)}
@@ -115,7 +173,7 @@ function Post() {
                 </Link>
                 <span>{comment.comment}</span>
               </div>
-              {comment.author.email === auth.userInfo.email && (
+              {comment.author.email === sessionStorage.getItem('email') && (
                 <button
                   className={styles.deleteComment}
                   onClick={() => deleteCommentHandler(comment)}
@@ -143,6 +201,46 @@ function Post() {
           </button>
         </form>
       </section>
+      <>
+        <Modal size="lg" show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Update Post</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {' '}
+            <form
+              action=""
+              className={styles.updatePostForm}
+              autoComplete="off"
+              onSubmit={handleUpdatePost}
+            >
+              <div className={styles.formControl}>
+                <label htmlFor="title">Title</label>
+                <input
+                  type="text"
+                  id="utitle"
+                  name="utitle"
+                  value={updatedPost.utitle}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className={styles.formControl}>
+                <label htmlFor="textarea">Description</label>
+                <textarea
+                  name="udescription"
+                  id="udescription"
+                  cols="30"
+                  rows="100"
+                  value={updatedPost.udescription}
+                  onChange={handleChange}
+                ></textarea>
+              </div>
+
+              <button>Update</button>
+            </form>
+          </Modal.Body>
+        </Modal>
+      </>
     </div>
   );
 }
